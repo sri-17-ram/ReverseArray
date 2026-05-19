@@ -1,0 +1,116 @@
+1.Write a Java program to swap two numbers without using a third variable.
+class Swap{
+public static void main(String args[]){
+int a=10,b=20;
+a=a+b;
+b=a-b;
+a=a-b;
+System.out.println("the value swaped");
+System.out.println("a="+a);
+System.out.println("b="+b);
+}
+}
+
+2.Write a Java program to find the largest among three numbers using the ternary operator.
+class Largest{
+public static void main(String args[]){
+int a=10,b=20,c=15;
+int largest=(a>b)?(a>c?a:c):(b>c?b:c);
+System.out.println("the largest value is "+largest);
+}
+}
+
+3.Write a Java program to calculate the electricity bill based on unit consumption using arithmetic operators.
+import java.util.Scanner;
+
+public class Electricitybill {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the unit: ");
+        int unit=sc.nextInt();
+        double bill=0;
+        if(unit<=100){
+            bill=unit*5;
+        }else if(unit<=200){
+            bill=(unit*5)+((unit-100)*7);
+        }else{
+            bill=(unit*5)+(unit*7)+((unit-200)*10);
+        }
+        System.out.println("Total bill Amount : "+bill);
+    }
+}
+
+
+4.Write a Java program to reverse a 3-digit number using % and / operators.
+import java.util.Scanner;
+
+public class Reverse {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the numbers: ");
+        int num=sc.nextInt();
+        int last=num%10;
+        int mid=(num/10)%10;
+        int first=num/100;
+        int rev=(last*100)+(mid*10)+first;
+        System.out.println("the reversed number : "+rev);
+        
+    }
+}
+
+
+5.Write a Java program to check whether a number is even or odd using the bitwise & operator.
+import java.util.Scanner;
+
+public class EvenOdd{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num=sc.nextInt();
+        if(num%2==0){
+            System.out.println("it is Even");
+        }
+        else{
+            System.out.println("it is Odd");
+        }
+        
+        
+    }
+}
+
+
+6.Write a Java program to calculate compound interest
+7.Write a Java program to convert total seconds into hours, minutes, and seconds.
+import java.util.Scanner;
+
+public class Timeconver{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the seconds: ");
+        int seconds=sc.nextInt();
+        int hour=seconds/3600;
+        int minutes=(seconds%3600)/60;
+        int totalseconds=seconds%60;
+        System.out.println(seconds+"seconds "+hour+"hours "+minutes+"minutes "+totalseconds+"seconds ");
+    }
+}
+
+
+8.Write a Java program to check whether a year is a leap year using logical operators.
+import java.util.Scanner;
+
+public class Leapyear{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int year=sc.nextInt();
+        if((year%400==0) || (year%4==0)&&(year%100!=0)){
+            System.out.println("it is Leapyear");
+        }
+        else{
+            System.out.println("it is not Leapyear");
+        }
+        
+        
+    }
+}
