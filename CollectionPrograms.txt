@@ -1,0 +1,1215 @@
+List Programs (1–10)
+1. Store and Display Student Names using ArrayList
+Add 5 student names into an ArrayList
+Display all names using loop
+import java.util.ArrayList;
+
+public class StudentList {
+    public static void main(String[] args) {
+        ArrayList<String> students = new ArrayList<>();
+        students.add("Rahul");
+        students.add("Priya");
+        students.add("Arjun");
+        students.add("Sneha");
+        students.add("Vikram");
+        System.out.println("Student Names:");
+        for (String name : students) {
+            System.out.println(name);
+        }
+    }
+}
+
+2. Find Maximum Number in a List
+Store integers in a List
+Find largest element manually
+import java.util.ArrayList;
+import java.util.List;
+
+public class MaxInList {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(12);
+        numbers.add(45);
+        numbers.add(7);
+        numbers.add(89);
+        numbers.add(23);
+        System.out.println("Numbers in the list: " + numbers);
+        int max = numbers.get(0);
+        for (int i = 1; i < numbers.size(); i++) {
+            if (numbers.get(i) > max) {
+                max = numbers.get(i);
+            }
+        }
+        System.out.println("Maximum number in the list: " + max);
+    }
+}
+
+3. Remove Duplicate Elements from List
+Input duplicate values
+Remove duplicates using another collection
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(10);
+        numbers.add(30);
+        numbers.add(20);
+        numbers.add(40);
+        System.out.println("Original List: " + numbers);
+        Set<Integer> uniqueNumbers = new HashSet<>(numbers);
+        List<Integer> resultList = new ArrayList<>(uniqueNumbers);
+        System.out.println("List after removing duplicates: " + resultList);
+    }
+}
+
+4. Reverse Elements in a List
+Reverse without using built-in reverse method
+import java.util.ArrayList;
+import java.util.List;
+public class ReverseList {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+        System.out.println("Original List: " + numbers);
+        List<Integer> reversed = new ArrayList<>();
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            reversed.add(numbers.get(i));
+        }
+        System.out.println("Reversed List: " + reversed);
+    }
+}
+
+5. Search an Element in List
+Check whether a given number exists in list
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class SearchElement {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+        System.out.println("Numbers in the list: " + numbers);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number to search: ");
+        int searchNum = sc.nextInt();
+        boolean found = false;
+        for (int num : numbers) {
+            if (num == searchNum) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            System.out.println(searchNum + " exists in the list.");
+        } else {
+            System.out.println(searchNum + " does not exist in the list.");
+        }
+    }
+}
+
+6. Sort Names Alphabetically
+Store names in ArrayList
+Sort using Collections.sort()
+import java.util.ArrayList;
+import java.util.Collections;
+public class SortNames {
+    public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Rahul");
+        names.add("Priya");
+        names.add("Arjun");
+        names.add("Sneha");
+        names.add("Vikram");
+        System.out.println("Original List: " + names);
+        Collections.sort(names);
+        System.out.println("Sorted List (Alphabetical): " + names);
+    }
+}
+
+7. Count Even and Odd Numbers in List
+Store numbers
+Count even and odd separately
+import java.util.ArrayList;
+import java.util.List;
+public class CountEvenOdd {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(22);
+        numbers.add(33);
+        numbers.add(40);
+        numbers.add(55);
+        System.out.println("Numbers in the list: " + numbers);
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        System.out.println("Count of Even Numbers: " + evenCount);
+        System.out.println("Count of Odd Numbers: " + oddCount);
+    }
+}
+
+8. Merge Two Lists
+Create two lists
+Combine them into third list
+import java.util.ArrayList;
+import java.util.List;
+public class MergeLists {
+    public static void main(String[] args) {
+        List<String> list1 = new ArrayList<>();
+        list1.add("Rahul");
+        list1.add("Priya");
+        list1.add("Arjun");
+        List<String> list2 = new ArrayList<>();
+        list2.add("Sneha");
+        list2.add("Vikram");
+        list2.add("Kiran");
+        System.out.println("List 1: " + list1);
+        System.out.println("List 2: " + list2);
+        List<String> mergedList = new ArrayList<>();
+        mergedList.addAll(list1);
+        mergedList.addAll(list2);
+        System.out.println("Merged List: " + mergedList);
+    }
+}
+
+9. Convert Array to List
+Take integer array
+Convert into ArrayList
+import java.util.ArrayList;
+import java.util.Arrays;
+public class ArrayToList {
+    public static void main(String[] args) {
+        Integer[] numbers = {10, 20, 30, 40, 50};
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(numbers));
+        System.out.println("Array converted to List: " + list);
+    }
+}
+
+10. Find Second Largest Element in List
+Find second highest number without sorting
+import java.util.ArrayList;
+import java.util.List;
+public class SecondLargest {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(12);
+        numbers.add(45);
+        numbers.add(7);
+        numbers.add(89);
+        numbers.add(23);
+        System.out.println("Numbers in the list: " + numbers);
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int num : numbers) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
+        }
+        if (secondLargest == Integer.MIN_VALUE) {
+            System.out.println("No second largest element found.");
+        } else {
+            System.out.println("Second largest number: " + secondLargest);
+        }
+    }
+}
+
+Set Programs (11–20)
+11. Store Unique Elements using HashSet
+Add duplicate values
+Observe duplicate removal
+import java.util.HashSet;
+public class UniqueElements {
+    public static void main(String[] args) {
+        HashSet<Integer> numbers = new HashSet<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(20);
+        numbers.add(40);
+        numbers.add(10);
+        System.out.println("Unique Elements in HashSet: " + numbers);
+    }
+}
+
+12. Count Frequency of Characters using Set
+Count unique characters in string
+import java.util.HashSet;
+import java.util.Scanner;
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+        input = input.toLowerCase();
+        HashSet<Character> uniqueChars = new HashSet<>();
+        for (char ch : input.toCharArray()) {
+            if (ch != ' ') {
+                uniqueChars.add(ch);
+            }
+        }
+        System.out.println("Character Frequencies:");
+        for (char ch : uniqueChars) {
+            int count = 0;
+            for (char c : input.toCharArray()) {
+                if (c == ch) {
+                    count++;
+                }
+            }
+            System.out.println(ch + " → " + count);
+        }
+    }
+}
+
+13. Find Union of Two Sets
+Combine two sets
+import java.util.HashSet;
+import java.util.Set;
+public class UnionOfSets {
+    public static void main(String[] args) {
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(10);
+        set1.add(20);
+        set1.add(30);
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(20);
+        set2.add(40);
+        set2.add(50);
+        System.out.println("Set 1: " + set1);
+        System.out.println("Set 2: " + set2);
+        Set<Integer> unionSet = new HashSet<>(set1);
+        unionSet.addAll(set2);
+        System.out.println("Union of Set1 and Set2: " + unionSet);
+    }
+}
+
+14. Find Intersection of Two Sets
+Find common elements between sets
+import java.util.HashSet;
+import java.util.Set;
+public class IntersectionOfSets {
+    public static void main(String[] args) {
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(10);
+        set1.add(20);
+        set1.add(30);
+        set1.add(40);
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(30);
+        set2.add(40);
+        set2.add(50);
+        set2.add(60);
+        System.out.println("Set 1: " + set1);
+        System.out.println("Set 2: " + set2);
+        Set<Integer> intersectionSet = new HashSet<>(set1);
+        intersectionSet.retainAll(set2);
+        System.out.println("Intersection of Set1 and Set2: " + intersectionSet);
+    }
+}
+
+15. Find Difference Between Sets
+Elements present in first set but not second
+import java.util.HashSet;
+import java.util.Set;
+public class DifferenceOfSets {
+    public static void main(String[] args) {
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(10);
+        set1.add(20);
+        set1.add(30);
+        set1.add(40);
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(30);
+        set2.add(40);
+        set2.add(50);
+        set2.add(60);
+        System.out.println("Set 1: " + set1);
+        System.out.println("Set 2: " + set2);
+        Set<Integer> differenceSet = new HashSet<>(set1);
+        differenceSet.removeAll(set2);
+        System.out.println("Difference (Set1 - Set2): " + differenceSet);
+    }
+}
+
+16. Check Whether Two Sets are Equal
+Compare two HashSets
+import java.util.HashSet;
+import java.util.Set;
+public class CompareSets {
+    public static void main(String[] args) {
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(10);
+        set1.add(20);
+        set1.add(30);
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(30);
+        set2.add(20);
+        set2.add(10);
+        System.out.println("Set 1: " + set1);
+        System.out.println("Set 2: " + set2);
+        if (set1.equals(set2)) {
+            System.out.println("Both sets are equal.");
+        } else {
+            System.out.println("Sets are not equal.");
+        }
+    }
+}
+
+17. Sort Elements using TreeSet
+Insert random integers
+Display sorted output
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+public class SortWithTreeSet {
+    public static void main(String[] args) {
+        Set<Integer> numbers = new TreeSet<>();
+        Random rand = new Random();
+        for (int i = 0; i < 10; i++) {
+            int num = rand.nextInt(100);
+            numbers.add(num);
+        }
+        System.out.println("Sorted Elements (TreeSet): " + numbers);
+    }
+}
+
+18. Remove Elements Starting with Specific Letter
+Use Set<String>
+Remove names starting with 'A'
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+public class RemoveNamesStartingWithA {
+    public static void main(String[] args) {
+        Set<String> names = new HashSet<>();
+        names.add("Arjun");
+        names.add("Rahul");
+        names.add("Anita");
+        names.add("Sneha");
+        names.add("Amit");
+        names.add("Vikram");
+        System.out.println("Original Set: " + names);
+        Iterator<String> itr = names.iterator();
+        while (itr.hasNext()) {
+            String name = itr.next();
+            if (name.startsWith("A")) {
+                itr.remove();
+            }
+        }
+        System.out.println("Set after removing names starting with 'A': " + names);
+    }
+}
+
+19. Find Duplicate Elements in Array using Set
+Detect duplicates from integer array
+import java.util.HashSet;
+public class FindDuplicates {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 20, 10, 50, 30};
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+        for (int num : numbers) {
+            if (!seen.add(num)) { 
+                duplicates.add(num);
+            }
+        }
+        System.out.println("Array elements: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println("\nDuplicate elements: " + duplicates);
+    }
+}
+
+20. Create a Menu-Driven Set Program
+
+Operations:
+
+Add
+Remove
+Search
+Display
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+public class MenuDrivenSet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Set<String> set = new HashSet<>();
+        int choice;
+        do {
+            System.out.println("\n--- Menu ---");
+            System.out.println("1. Add Element");
+            System.out.println("2. Remove Element");
+            System.out.println("3. Search Element");
+            System.out.println("4. Display Elements");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter element to add: ");
+                    String addElement = sc.nextLine();
+                    set.add(addElement);
+                    System.out.println(addElement + " added.");
+                    break;
+                case 2:
+                    System.out.print("Enter element to remove: ");
+                    String removeElement = sc.nextLine();
+                    if (set.remove(removeElement)) {
+                        System.out.println(removeElement + " removed.");
+                    } else {
+                        System.out.println(removeElement + " not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter element to search: ");
+                    String searchElement = sc.nextLine();
+                    if (set.contains(searchElement)) {
+                        System.out.println(searchElement + " exists in the set.");
+                    } else {
+                        System.out.println(searchElement + " not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Elements in the set: " + set);
+                    break;
+                case 5:
+                    System.out.println("Exiting program...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+
+Map Programs (21–30)
+21. Store Student Marks using HashMap
+Key = Student Name
+Value = Marks
+
+import java.util.HashMap;
+import java.util.Map;
+public class StudentMarks {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marksMap = new HashMap<>();
+        marksMap.put("Rahul", 85);
+        marksMap.put("Priya", 92);
+        marksMap.put("Arjun", 76);
+        marksMap.put("Sneha", 89);
+        marksMap.put("Vikram", 95);
+        System.out.println("Student Marks:");
+        for (Map.Entry<String, Integer> entry : marksMap.entrySet()) {
+            System.out.println(entry.getKey() + " → " + entry.getValue());
+        }
+    }
+}
+
+22. Display All Keys and Values in Map
+Use entrySet()
+
+import java.util.HashMap;
+import java.util.Map;
+public class DisplayMap {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marksMap = new HashMap<>();
+        marksMap.put("Rahul", 85);
+        marksMap.put("Priya", 92);
+        marksMap.put("Arjun", 76);
+        marksMap.put("Sneha", 89);
+        System.out.println("All Keys and Values in Map:");
+        for (Map.Entry<String, Integer> entry : marksMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+
+23. Count Word Frequency using Map
+Count repeated words in sentence
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class WordFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine();
+        String[] words = sentence.toLowerCase().split("\\s+");
+        HashMap<String, Integer> wordCount = new HashMap<>();
+        for (String word : words) {
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, 1);
+            }
+        }
+        System.out.println("\nWord Frequencies:");
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            System.out.println(entry.getKey() + " → " + entry.getValue());
+        }
+    }
+}
+
+24. Find Highest Value in Map
+Find student with highest marks
+
+import java.util.HashMap;
+import java.util.Map;
+public class HighestMarks {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marksMap = new HashMap<>();
+        marksMap.put("Rahul", 85);
+        marksMap.put("Priya", 92);
+        marksMap.put("Arjun", 76);
+        marksMap.put("Sneha", 89);
+        marksMap.put("Vikram", 95);
+        String topStudent = null;
+        int highestMarks = Integer.MIN_VALUE;
+        for (Map.Entry<String, Integer> entry : marksMap.entrySet()) {
+            if (entry.getValue() > highestMarks) {
+                highestMarks = entry.getValue();
+                topStudent = entry.getKey();
+            }
+        }
+        System.out.println("Student Marks: " + marksMap);
+        System.out.println("Topper: " + topStudent + " with " + highestMarks + " marks");
+    }
+}
+
+25. Check Whether Key Exists
+Search for specific key in HashMap
+
+import java.util.HashMap;
+public class CheckKeyExists {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marksMap = new HashMap<>();
+        marksMap.put("Rahul", 85);
+        marksMap.put("Priya", 92);
+        marksMap.put("Arjun", 76);
+        marksMap.put("Sneha", 89);
+        String searchKey = "Priya";
+        if (marksMap.containsKey(searchKey)) {
+            System.out.println("Key '" + searchKey + "' exists with value: " + marksMap.get(searchKey));
+        } else {
+            System.out.println("Key '" + searchKey + "' does not exist in the map.");
+        }
+    }
+}
+
+26. Sort Map by Keys using TreeMap
+Insert random data
+Display sorted keys
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+public class SortMapByKeys {
+    public static void main(String[] args) {
+        HashMap<String, Integer> dataMap = new HashMap<>();
+        dataMap.put("Zebra", 5);
+        dataMap.put("Apple", 10);
+        dataMap.put("Mango", 7);
+        dataMap.put("Banana", 12);
+        dataMap.put("Cherry", 8);
+        System.out.println("Original HashMap: " + dataMap);
+        TreeMap<String, Integer> sortedMap = new TreeMap<>(dataMap);
+        System.out.println("Sorted Map (by keys):");
+        for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+
+27. Store Employee ID and Name
+Perform add, delete, search operations
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class EmployeeManagement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer, String> employeeMap = new HashMap<>();
+        int choice;
+        do {
+            System.out.println("\n--- Employee Menu ---");
+            System.out.println("1. Add Employee");
+            System.out.println("2. Delete Employee");
+            System.out.println("3. Search Employee");
+            System.out.println("4. Display All Employees");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Employee ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Enter Employee Name: ");
+                    String name = sc.nextLine();
+                    employeeMap.put(id, name);
+                    System.out.println("Employee added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter Employee ID to delete: ");
+                    int delId = sc.nextInt();
+                    if (employeeMap.containsKey(delId)) {
+                        employeeMap.remove(delId);
+                        System.out.println("Employee deleted successfully.");
+                    } else {
+                        System.out.println("Employee ID not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Employee ID to search: ");
+                    int searchId = sc.nextInt();
+                    if (employeeMap.containsKey(searchId)) {
+                        System.out.println("Employee Found: " + employeeMap.get(searchId));
+                    } else {
+                        System.out.println("Employee ID not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("All Employees:");
+                    for (Map.Entry<Integer, String> entry : employeeMap.entrySet()) {
+                        System.out.println("ID: " + entry.getKey() + ", Name: " + entry.getValue());
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting program...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+28. Create Phonebook Application using Map
+Name → Phone Number
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class PhoneBookApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String, String> phoneBook = new HashMap<>();
+        int choice;
+        do {
+            System.out.println("\n--- Phonebook Menu ---");
+            System.out.println("1. Add Contact");
+            System.out.println("2. Delete Contact");
+            System.out.println("3. Search Contact");
+            System.out.println("4. Display All Contacts");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Name: ");
+                    String name = sc.nextLine();
+                    System.out.print("Enter Phone Number: ");
+                    String phone = sc.nextLine();
+                    phoneBook.put(name, phone);
+                    System.out.println("Contact added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter Name to delete: ");
+                    String delName = sc.nextLine();
+                    if (phoneBook.containsKey(delName)) {
+                        phoneBook.remove(delName);
+                        System.out.println("Contact deleted successfully.");
+                    } else {
+                        System.out.println("Name not found in phonebook.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Name to search: ");
+                    String searchName = sc.nextLine();
+                    if (phoneBook.containsKey(searchName)) {
+                        System.out.println("Found: " + searchName + " → " + phoneBook.get(searchName));
+                    } else {
+                        System.out.println("Name not found in phonebook.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("All Contacts:");
+                    for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
+                        System.out.println("Name: " + entry.getKey() + ", Phone: " + entry.getValue());
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting Phonebook...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+29. Count Character Occurrence using Map
+
+Example:
+
+Input: programming
+Output:
+p = 1
+r = 2
+g = 2
+
+import java.util.HashMap;
+import java.util.Map;
+public class CharFrequency {
+    public static void main(String[] args) {
+        String input = "programming";
+        HashMap<Character, Integer> charCount = new HashMap<>();
+        for (char c : input.toCharArray()) {
+            if (charCount.containsKey(c)) {
+                charCount.put(c, charCount.get(c) + 1);
+            } else {
+                charCount.put(c, 1);
+            }
+        }
+        System.out.println("Character Occurrences:");
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+    }
+}
+
+30. Create Mini Dictionary using Map
+Word → Meaning
+Search meaning by word
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class MiniDictionary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String, String> dictionary = new HashMap<>();
+        int choice;
+        do {
+            System.out.println("\n--- Mini Dictionary Menu ---");
+            System.out.println("1. Add Word");
+            System.out.println("2. Search Meaning");
+            System.out.println("3. Delete Word");
+            System.out.println("4. Display All Words");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Word: ");
+                    String word = sc.nextLine();
+                    System.out.print("Enter Meaning: ");
+                    String meaning = sc.nextLine();
+                    dictionary.put(word, meaning);
+                    System.out.println("Word added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter Word to search: ");
+                    String searchWord = sc.nextLine();
+                    if (dictionary.containsKey(searchWord)) {
+                        System.out.println(searchWord + " → " + dictionary.get(searchWord));
+                    } else {
+                        System.out.println("Word not found in dictionary.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Word to delete: ");
+                    String delWord = sc.nextLine();
+                    if (dictionary.containsKey(delWord)) {
+                        dictionary.remove(delWord);
+                        System.out.println("Word deleted successfully.");
+                    } else {
+                        System.out.println("Word not found in dictionary.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("All Words in Dictionary:");
+                    for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+                        System.out.println(entry.getKey() + " → " + entry.getValue());
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting Dictionary...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+
+Advanced Combined Programs 
+31. Library Management using List
+Add books
+Remove books
+Search books
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class LibraryManagement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<String> books = new ArrayList<>();
+        int choice;
+        do {
+            System.out.println("\n--- Library Menu ---");
+            System.out.println("1. Add Book");
+            System.out.println("2. Remove Book");
+            System.out.println("3. Search Book");
+            System.out.println("4. Display All Books");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine(); 
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter book title to add: ");
+                    String bookToAdd = sc.nextLine();
+                    books.add(bookToAdd);
+                    System.out.println("Book added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter book title to remove: ");
+                    String bookToRemove = sc.nextLine();
+                    if (books.remove(bookToRemove)) {
+                        System.out.println("Book removed successfully.");
+                    } else {
+                        System.out.println("Book not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter book title to search: ");
+                    String bookToSearch = sc.nextLine();
+                    if (books.contains(bookToSearch)) {
+                        System.out.println("Book found: " + bookToSearch);
+                    } else {
+                        System.out.println("Book not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Books in Library:");
+                    for (String book : books) {
+                        System.out.println("- " + book);
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting Library Management...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+32. Voting System using Map
+Candidate name as key
+Vote count as value
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class VotingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String, Integer> votes = new HashMap<>();
+        int choice;
+        do {
+            System.out.println("\n--- Voting Menu ---");
+            System.out.println("1. Add Candidate");
+            System.out.println("2. Cast Vote");
+            System.out.println("3. Search Vote Count");
+            System.out.println("4. Display All Results");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Candidate Name: ");
+                    String candidate = sc.nextLine();
+                    votes.put(candidate, 0);
+                    System.out.println("Candidate added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter Candidate Name to vote: ");
+                    String voteCandidate = sc.nextLine();
+                    if (votes.containsKey(voteCandidate)) {
+                        votes.put(voteCandidate, votes.get(voteCandidate) + 1);
+                        System.out.println("Vote cast for " + voteCandidate);
+                    } else {
+                        System.out.println("Candidate not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Candidate Name to search: ");
+                    String searchCandidate = sc.nextLine();
+                    if (votes.containsKey(searchCandidate)) {
+                        System.out.println(searchCandidate + " has " + votes.get(searchCandidate) + " votes.");
+                    } else {
+                        System.out.println("Candidate not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Voting Results:");
+                    for (Map.Entry<String, Integer> entry : votes.entrySet()) {
+                        System.out.println(entry.getKey() + " → " + entry.getValue() + " votes");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting Voting System...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+33. Attendance System using Set
+Store present student roll numbers
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+public class AttendanceSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Set<Integer> attendance = new HashSet<>();
+        int choice;
+        do {
+            System.out.println("\n--- Attendance Menu ---");
+            System.out.println("1. Mark Student Present");
+            System.out.println("2. Remove Student");
+            System.out.println("3. Search Student");
+            System.out.println("4. Display Attendance List");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Roll Number to mark present: ");
+                    int rollAdd = sc.nextInt();
+                    attendance.add(rollAdd);
+                    System.out.println("Roll No. " + rollAdd + " marked present.");
+                    break;
+                case 2:
+                    System.out.print("Enter Roll Number to remove: ");
+                    int rollRemove = sc.nextInt();
+                    if (attendance.remove(rollRemove)) {
+                        System.out.println("Roll No. " + rollRemove + " removed from attendance.");
+                    } else {
+                        System.out.println("Roll No. " + rollRemove + " not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Roll Number to search: ");
+                    int rollSearch = sc.nextInt();
+                    if (attendance.contains(rollSearch)) {
+                        System.out.println("Roll No. " + rollSearch + " is present.");
+                    } else {
+                        System.out.println("Roll No. " + rollSearch + " is absent.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Present Students (Roll Numbers): " + attendance);
+                    break;
+                case 5:
+                    System.out.println("Exiting Attendance System...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}
+
+34. Shopping Cart using List
+Add products
+Calculate total bill
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+class Product {
+    String name;
+    double price;
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+}
+public class ShoppingCart {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Product> cart = new ArrayList<>();
+        int choice;
+        do {
+            System.out.println("\n--- Shopping Cart Menu ---");
+            System.out.println("1. Add Product");
+            System.out.println("2. Display Cart");
+            System.out.println("3. Calculate Total Bill");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Product Name: ");
+                    String name = sc.nextLine();
+                    System.out.print("Enter Product Price: ");
+                    double price = sc.nextDouble();
+                    cart.add(new Product(name, price));
+                    System.out.println(name + " added to cart.");
+                    break;
+                case 2:
+                    System.out.println("Products in Cart:");
+                    for (Product p : cart) {
+                        System.out.println(p.name + " → ₹" + p.price);
+                    }
+                    break;
+                case 3:
+                    double total = 0;
+                    for (Product p : cart) {
+                        total += p.price;
+                    }
+                    System.out.println("Total Bill = ₹" + total);
+                    break;
+                case 4:
+                    System.out.println("Exiting Shopping Cart...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 4);
+    }
+}
+
+35. Student Database using List + Map
+Store student objects in list
+Map student ID with details
+
+import java.util.*;
+class Student {
+    int id;
+    String name;
+    int age;
+    String course;
+    Student(int id, String name, int age, String course) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.course = course;
+    }
+    public String toString() {
+        return "ID: " + id + ", Name: " + name + ", Age: " + age + ", Course: " + course;
+    }
+}
+public class StudentDatabase {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Student> studentList = new ArrayList<>();
+        Map<Integer, Student> studentMap = new HashMap<>();
+        int choice;
+        do {
+            System.out.println("\n--- Student Database Menu ---");
+            System.out.println("1. Add Student");
+            System.out.println("2. Remove Student");
+            System.out.println("3. Search Student by ID");
+            System.out.println("4. Display All Students");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Student ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Enter Student Name: ");
+                    String name = sc.nextLine();
+                    System.out.print("Enter Age: ");
+                    int age = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Enter Course: ");
+                    String course = sc.nextLine();
+                    Student s = new Student(id, name, age, course);
+                    studentList.add(s);
+                    studentMap.put(id, s);
+                    System.out.println("Student added successfully.");
+                    break;
+                case 2:
+                    System.out.print("Enter Student ID to remove: ");
+                    int removeId = sc.nextInt();
+                    if (studentMap.containsKey(removeId)) {
+                        Student toRemove = studentMap.get(removeId);
+                        studentList.remove(toRemove);
+                        studentMap.remove(removeId);
+                        System.out.println("Student removed successfully.");
+                    } else {
+                        System.out.println("Student ID not found.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Student ID to search: ");
+                    int searchId = sc.nextInt();
+                    if (studentMap.containsKey(searchId)) {
+                        System.out.println("Found: " + studentMap.get(searchId));
+                    } else {
+                        System.out.println("Student ID not found.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("All Students:");
+                    for (Student st : studentList) {
+                        System.out.println(st);
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exiting Student Database...");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 5);
+    }
+}

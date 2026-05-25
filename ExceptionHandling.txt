@@ -1,0 +1,159 @@
+1. Divide Two Numbers
+Write a Java program to divide two integers entered by the user.
+Requirements:
+Handle ArithmeticException
+Display message:
+Plain text
+Cannot divide by zero
+
+import java.util.Scanner;
+public class DivideTwoNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first integer: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter second integer: ");
+        int num2 = sc.nextInt();
+        try {
+            int result = num1 / num2;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
+
+2. Array Index Problem
+Create an array of 5 elements and try to access the 10th element.
+Requirements:
+Handle ArrayIndexOutOfBoundsException
+Print a proper error message
+
+public class ArrayIndexProblem {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        try {
+            System.out.println("Accessing 10th element: " + arr[9]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Attempted to access an invalid array index");
+        }
+    }
+}
+
+3. String to Integer Conversion
+Write a program to convert a string "ABC" into an integer.
+Requirements:
+Handle NumberFormatException
+Display:
+Plain text
+Invalid number format
+
+public class StringToIntegerConversion {
+    public static void main(String[] args) {
+        String str = "ABC";
+        try {
+            int num = Integer.parseInt(str);
+            System.out.println("Converted number: " + num);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format");
+        }
+    }
+}
+
+4. Null Value Problem
+Create a String variable with null value and try to print its length.
+Requirements:
+Handle NullPointerException
+Print custom message
+
+public class NullValueProblem {
+    public static void main(String[] args) {
+        String str = null;
+        try {
+            System.out.println("Length of string: " + str.length());
+        } catch (NullPointerException e) {
+            System.out.println("Error: String is null, cannot find length");
+        }
+    }
+}
+
+
+5. Multiple Exception Handling
+Write a program that:
+Divides two numbers
+Accesses array elements
+Requirements:
+Use multiple catch blocks
+Handle:
+ArithmeticException
+ArrayIndexOutOfBoundsException
+
+public class MultipleExceptionHandling {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        int num1 = 10;
+        int num2 = 0;
+        try {
+            int result = num1 / num2;
+            System.out.println("Division Result: " + result);
+            System.out.println("Accessing 10th element: " + arr[9]);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid array index accessed");
+        }
+    }
+}
+
+6. Finally Block Program
+Write a program using:
+try
+catch
+finally
+
+Requirements:
+Print:
+Plain text
+Finally block always executes
+even if exception occurs.
+
+public class FinallyBlockProgram {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 0;
+        try {
+            int result = num1 / num2;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero");
+        } finally {
+            System.out.println("Finally block always executes even if exception occurs.");
+        }
+    }
+}
+
+
+7.Create Your Own Exception
+Create a custom exception called:
+InvalidAgeException
+If age is below 18, throw the exception.
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+public class CustomExceptionDemo {
+    public static void main(String[] args) {
+        int age = 15;
+        try {
+            if (age < 18) {
+                throw new InvalidAgeException("Age is below 18, not allowed.");
+            } else {
+                System.out.println("Valid age: " + age);
+            }
+        } catch (InvalidAgeException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}

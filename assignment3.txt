@@ -1,0 +1,467 @@
+1. Student Management System
+Create a class Student with:
+name
+rollNo
+marks
+
+Use a constructor to initialize values and display student details.
+
+Concepts
+Constructor
+Object creation
+
+class Student {
+    String name;
+    int rollNo;
+    int marks;
+    Student(String name, int rollNo, int marks) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+    }
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Marks: " + marks);
+    }
+    public static void main(String[] args) {
+        Student s1 = new Student("Rahul", 101, 85);
+        Student s2 = new Student("Priya", 102, 92);
+        s1.displayDetails();
+        System.out.println("-------------------");
+        s2.displayDetails();
+    }
+}
+
+
+2. Vehicle Inheritance Program
+Create a parent class Vehicle with method start().
+Create child classes:
+
+Car
+Bike
+
+Override the start() method in each class.
+
+Concepts
+Inheritance
+Method overriding
+
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle is starting...");
+    }
+}
+class Car extends Vehicle {
+    void start() {
+        System.out.println("Car starts with a key");
+    }
+}
+class Bike extends Vehicle {
+    void start() {
+        System.out.println("Bike starts with a kick");
+    }
+}
+public class VehicleTest{
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle();
+        Car c = new Car();
+        Bike b = new Bike();
+        v.start();  
+        c.start();  
+        b.start();  
+    }
+}
+
+
+3. Shape Area using Abstract Class
+Create an abstract class Shape with abstract method:
+area();
+
+Implement subclasses:
+Circle
+Rectangle
+
+Concepts
+Abstract class
+Runtime polymorphism
+
+abstract class Shape {
+    abstract void area();  // abstract method
+}
+class Circle extends Shape {
+    int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+    void area() {
+        double result = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + result);
+    }
+}
+class Rectangle extends Shape {
+    int length, breadth;
+    Rectangle(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+    void area() {
+        int result = length * breadth;
+        System.out.println("Area of Rectangle: " + result);
+    }
+}
+public class PolymorphismExample {
+    public static void main(String[] args) {
+        Shape s;
+        s = new Circle(5);   
+        s.area();
+        s = new Rectangle(4, 6); 
+        s.area();
+    }
+}
+
+
+4. Payment System using Interface
+Create an interface Payment with method:
+pay();
+
+Implement:
+
+CreditCardPayment
+UPIPayment
+
+Concepts
+Interface
+Abstraction
+
+interface Payment {
+    void pay();
+}
+class CreditCardPayment implements Payment {
+    public void pay() {
+        System.out.println("Payment done using Credit Card");
+    }
+}
+class UPIPayment implements Payment {
+    public void pay() {
+        System.out.println("Payment done using UPI");
+    }
+}
+public class PaymentExample{
+    public static void main(String[] args) {
+        Payment p;
+        p = new CreditCardPayment(); 
+        p.pay();
+        p = new UPIPayment();
+        p.pay();
+    }
+}
+
+
+5. Employee Salary Polymorphism
+Create class Employee with method:
+calculateSalary();
+
+Override it in:
+
+FullTimeEmployee
+PartTimeEmployee
+
+Concepts
+Polymorphism
+Method overriding
+
+class Employee {
+    void calculateSalary() {
+        System.out.println("Employee salary calculation");
+    }
+}
+class FullTimeEmployee extends Employee {
+    void calculateSalary() {
+        System.out.println("Full-time salary = ₹30000");
+    }
+}
+class PartTimeEmployee extends Employee {
+    void calculateSalary() {
+        System.out.println("Part-time salary = ₹16000");
+    }
+}
+public class EmployeeTest{
+    public static void main(String[] args) {
+        Employee e1 = new FullTimeEmployee(); 
+        Employee e2 = new PartTimeEmployee();
+        e1.calculateSalary(); 
+        e2.calculateSalary(); 
+    }
+}
+
+
+
+6. Bank Account using Abstract Class
+Create abstract class BankAccount with:
+deposit()
+abstract withdraw()
+
+Implement:
+
+SavingsAccount
+CurrentAccount
+
+Concepts
+Abstract methods
+Inheritance
+
+abstract class BankAccount {
+    int balance = 0;
+    void deposit(int amount) {
+        balance += amount;
+        System.out.println("Deposited: ₹" + amount + ", Balance: ₹" + balance);
+    }
+    abstract void withdraw(int amount);
+}
+class SavingsAccount extends BankAccount {
+    void withdraw(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("SavingsAccount Withdraw: ₹" + amount + ", Balance: ₹" + balance);
+        } else {
+            System.out.println("Insufficient balance in SavingsAccount!");
+        }
+    }
+}
+class CurrentAccount extends BankAccount {
+    void withdraw(int amount) {
+        balance -= amount;
+        System.out.println("CurrentAccount Withdraw: ₹" + amount + ", Balance: ₹" + balance);
+    }
+}
+public class BankDemo {
+    public static void main(String[] args) {
+        BankAccount acc1 = new SavingsAccount();  
+        BankAccount acc2 = new CurrentAccount();
+
+        acc1.deposit(5000);
+        acc1.withdraw(2000);
+
+        acc2.deposit(3000);
+        acc2.withdraw(4000);
+    }
+}
+
+
+7. Smart Device Interface Program
+Create interface SmartDevice with methods:
+turnOn();
+turnOff();
+
+Implement:
+
+SmartTV
+SmartFan
+
+Concepts
+Interface implementation
+Common behavior
+
+interface SmartDevice {
+    void turnOn();
+    void turnOff();
+}
+class SmartTV implements SmartDevice {
+    public void turnOn() {
+        System.out.println("SmartTV is ON");
+    }
+    public void turnOff() {
+        System.out.println("SmartTV is OFF");
+    }
+}
+class SmartFan implements SmartDevice {
+    public void turnOn() {
+        System.out.println("SmartFan is ON");
+    }
+    public void turnOff() {
+        System.out.println("SmartFan is OFF");
+    }
+}
+public class SmartHome{
+    public static void main(String[] args) {
+        SmartDevice tv = new SmartTV();   
+        SmartDevice fan = new SmartFan();
+        tv.turnOn();
+        tv.turnOff();
+        fan.turnOn();
+        fan.turnOff();
+    }
+}
+
+
+8. Constructor Chaining using super()
+Create:
+Parent class Person
+Child class Teacher
+
+Use super() to initialize parent class variables.
+
+Concepts
+Constructor chaining
+super keyword
+Inheritance
+class Person {
+    String name;
+    int age;
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Person constructor called");
+    }
+    void displayPerson() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+class Teacher extends Person {
+    String subject;
+    double salary;
+    Teacher(String name, int age, String subject, double salary) {
+        super(name, age);
+        this.subject = subject;
+        this.salary = salary;
+        System.out.println("Teacher constructor called");
+    }
+    void displayTeacher() {
+        super.displayPerson();
+        System.out.println("Subject: " + subject);
+        System.out.println("Salary: ₹" + salary);
+    }
+}
+public class ConstructorChainingDemo {
+    public static void main(String[] args) {
+        Teacher t1 = new Teacher("Anita", 35, "Mathematics", 45000);
+        t1.displayTeacher();
+    }
+}
+
+
+9. Animal System using Abstract Class and Interface
+Create:
+Abstract class Animal
+Interface Pet
+
+Implement in:
+
+Dog
+Cat
+
+Concepts
+Multiple OOP concepts together
+Polymorphism
+Interface + Abstract class
+
+abstract class Animal {
+    String name;
+    Animal(String name) {
+        this.name = name;
+    }
+    abstract void sound();
+    void eat() {
+        System.out.println(name + " is eating.");
+    }
+}
+interface Pet {
+    void play();
+}
+class Dog extends Animal implements Pet {
+    Dog(String name) {
+        super(name);
+    }
+    void sound() {
+        System.out.println(name + " says: Woof Woof!");
+    }
+    public void play() {
+        System.out.println(name + " loves playing fetch.");
+    }
+}
+class Cat extends Animal implements Pet {
+    Cat(String name) {
+        super(name);
+    }
+    void sound() {
+        System.out.println(name + " says: Meow Meow!");
+    }
+    public void play() {
+        System.out.println(name + " enjoys chasing a ball of yarn.");
+    }
+}
+public class AnimalSystem {
+    public static void main(String[] args) {
+        Animal dog = new Dog("Buddy");
+        dog.sound();
+        dog.eat();
+        ((Pet) dog).play(); 
+        System.out.println();
+        Animal cat = new Cat("Kitty");
+        cat.sound();
+        cat.eat();
+        ((Pet) cat).play();
+    }
+}
+
+
+10. Multilevel Inheritance Program
+Create:
+Person
+Employee
+Manager
+
+Demonstrate multilevel inheritance with suitable methods.
+
+Concepts
+Multilevel inheritance
+Reusability of code
+
+class Person {
+    String name;
+    int age;
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    void displayPerson() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+class Employee extends Person {
+    int empId;
+    double salary;
+    Employee(String name, int age, int empId, double salary) {
+        super(name, age);
+        this.empId = empId;
+        this.salary = salary;
+    }
+    void displayEmployee() {
+        displayPerson();
+        System.out.println("Employee ID: " + empId);
+        System.out.println("Salary: ₹" + salary);
+    }
+}
+class Manager extends Employee {
+    String department;
+    Manager(String name, int age, int empId, double salary, String department) {
+        super(name, age, empId, salary);
+        this.department = department;
+    }
+    void displayManager() {
+        displayEmployee();
+        System.out.println("Department: " + department);
+    }
+}
+public class MultilevelInheritanceDemo {
+    public static void main(String[] args) {
+        Manager m1 = new Manager("Ravi", 40, 101, 75000, "IT");
+        System.out.println("--- Manager Details ---");
+        m1.displayManager();
+    }
+}
